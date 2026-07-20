@@ -1,0 +1,87 @@
+a)Create an MVC application to perform basic Arithmetic Operations
+CODE:_
+Modelmvc.cs:
+namespace MVCAdd.Models
+{
+public class AddModel
+{
+public int A { get; set; }
+public int B { get; set; }
+public int Result { get; set; }
+}
+}
+HomeController.cs:
+using System.Web;
+using MVCAdd.Models;
+namespace MVCAdd.Controllers
+{
+public class HomeController : Controller
+{
+public ActionResult Index()
+{
+return View(new AddModel());
+}
+[HttpPost]
+public ActionResult Index(AddModel m)
+{
+m.Result = m.A + m.B;
+return View(m); } } }
+Index.cshtml:
+@model MVCAdd.Models.AddModel
+<h2>Add Two Numbers</h2>
+@using (Html.BeginForm())
+{
+@Html.TextBoxFor(m => m.A)
+<br /><br />
+@Html.TextBoxFor(m => m.B)
+<br /><br />
+<input type="submit" value="Add" />
+<br /><br /> 
+<b>Result = @Model.Result</b>
+}
+
+b)Create an application to print Floyd’s triangle till n rows in C#.
+CODE:_
+using System;
+class Flyod
+{
+static void Main()
+{
+int count = 1;
+for(int i=0 ; i<5; i++)//row
+{
+for(int j=0 ; j<=i ;j++)//columns
+{
+Console.Write(count + "");
+count++;
+}
+Console.WriteLine();
+}
+Console.WriteLine("Khushi Patel T032");
+}
+}
+
+c)Write C# code to arrange the name of cities in sorted order. Accept name of 10 cities from the user
+CODE:-
+using System;
+class fylod
+{
+static void Main()
+{
+string[] city = new string[5];
+for (int i = 0; i < 5; i++)
+{
+Console.Write("Enter city name: ");
+city[i] = Console.ReadLine();
+}
+city.Sort();
+Console.WriteLine("------------sorted-------------"); for
+(int i = 0; i < city.Length; i++)
+{
+Console.WriteLine(city[i]);
+}
+Console.WriteLine("Khushi Patel T032");
+}
+}
+
+
