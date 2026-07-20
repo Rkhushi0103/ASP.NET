@@ -1,0 +1,231 @@
+A] FUNCTION OVER LOADING
+CODE:-
+using System;
+public class abc
+{
+void fun1(int num , int num1)
+{
+Console.WriteLine("Addition of 2 num = " +(num+num1));
+}
+void fun1(int num , int num1 , int num2)
+{
+Console.WriteLine("Addition of 3 num = " +(num+num1+num2));
+}
+public static void Main(string[] args)
+{
+abc obj = new abc();
+obj.fun1(11,12);
+obj.fun1(11,12,13);
+}
+} 
+
+B] INHERITANCE (all types )
+SINGLE INHERITANCE
+CODE:-
+using System;
+public class a {
+public
+void fun1() {
+Console.WriteLine("Method of class a ");
+}
+}
+public class b : a {
+public
+void fun2() {
+Console.WriteLine("Method of class b
+"); } 
+}
+public class main1 {
+public static void Main(string[] args) {
+b obj = new b();
+obj.fun1();
+obj.fun2(); 
+}
+}
+
+MULTILEVEL INHERITANCE
+CODE:-
+using System;
+public class A
+{
+public void fun1()
+{
+Console.WriteLine("Class A is here!");
+}
+}
+public class B : A
+{
+public void fun2()
+{
+Console.WriteLine("Class B is here!");
+}
+}
+public class C : B
+{
+public void fun3()
+{
+Console.WriteLine("Class C is here!");
+}
+}
+public class Program
+{
+public static void Main(string[] args)
+{
+C obj = new C();
+obj.fun1();
+obj.fun2();
+obj.fun3();
+}
+
+HIERARCHICAL INHERITANCE
+CODE:-
+using System;
+public class A
+{
+public void fun1()
+{
+Console.WriteLine("Class A is here!");
+}
+}
+public class B : A
+{
+public void fun2()
+{
+Console.WriteLine("Class B is here!");
+}
+}
+public class C : A
+{
+public void fun3()
+{
+Console.WriteLine("Class C is here!");
+}
+}
+public class Program
+{
+public static void Main(string[] args)
+{
+B obj = new B();
+obj.fun1();
+obj.fun2();
+C obj1 = new C();
+obj1.fun1();
+obj1.fun3(); // Correct
+}
+}
+
+MULTIPLE INHERITANCE
+CODE:-
+using System;
+public interface A
+{
+public void fun1();
+}
+public interface B
+{
+public void fun2();
+}
+public class C: A,B
+{
+public void fun1()
+{
+Console.WriteLine("Interface A is here!");
+}
+public void fun2()
+{
+Console.WriteLine("Interface B is here!");
+}
+public void fun3()
+{
+Console.WriteLine("Class C is here!");
+}
+}
+public class Program
+{
+public static void Main(string[] args)
+{
+C obj1 = new C();
+obj1.fun1();
+obj1.fun2();
+obj1.fun3();
+} 
+}
+
+C] CONSTRUCTOR OVERLOADING
+CODE:-
+using System;
+public class abc {
+abc(int num , int num1) {
+Console.WriteLine("Addition of 2 num = "
++(num+num1)); 
+}
+abc(int num , int num1 , int num2) {
+Console.WriteLine("Addition of 3 num = "
++(num+num1+num2)); 
+}
+public static void Main(string[] args) {
+abc obj = new abc(11,12);
+abc obj1 = new abc(11,12,13); 
+}
+}
+
+D] INTERFACES
+CODE:-
+using System;
+interface IStudent
+{
+void display();
+}
+class Student : IStudent
+{
+public void display()
+{
+Console.WriteLine("Name: Khushi");
+Console.WriteLine("Roll No: T032");
+}
+}
+class Program
+{
+public static void Main(string[] args)
+{
+Student obj = new Student();
+obj.display();
+} 
+}
+
+E] USING DELEGATES & EVENTS
+CODE:-
+using System;
+public delegate void Demo();
+class Program
+{
+public static void Show()
+{
+Console.WriteLine("Hello from Delegate");
+}
+static void Main(string[] args)
+{
+Demo d = Show;
+d();
+}
+}
+
+F] EXCEPTION HANDLING
+CODE:-
+using System;
+class Program
+{
+static void Main(string[] args)
+{
+try
+{
+int a = 10;
+int b = 0;
+Console.WriteLine(a / b);
+}
+catch
+{
+Console.WriteLine("Divide by zero error");
+}
+}
+}
